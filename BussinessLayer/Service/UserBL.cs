@@ -27,7 +27,7 @@ namespace BussinessLayer.Service
                 throw;
             }
         }
-        public UserLoginModel UserLogin(UserLoginModel userLoginModel)
+        public string UserLogin(UserLoginModel userLoginModel)
         {
             try
             {

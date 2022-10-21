@@ -16,12 +16,12 @@ namespace RepositoryLayer.Service
     public class UserRL : IUserRL
     {
         private readonly FundooContext fundooContext;
-        
+        private readonly IConfiguration iconfiguration;
         //daa of regitered dependency it 
-        public UserRL(FundooContext fundooContext)
+        public UserRL(FundooContext fundooContext, IConfiguration iconfiguration)
         {
             this.fundooContext = fundooContext;
-           
+            this.iconfiguration = iconfiguration;
         }
         public UserEntity Registration(UserRegistrationModel userRegistrationModel)
         {
@@ -51,20 +51,49 @@ namespace RepositoryLayer.Service
                 throw;
             }
         }
-        public UserLoginModel UserLogin(UserLoginModel userLoginModel)
+        public string UserLogin(UserLoginModel userLoginModel)
         {
             try
             {
                 var data = this.fundooContext.Usertable.FirstOrDefault(x => x.Email == userLoginModel.Email && x.Password == userLoginModel.Password);
                 if (data != null)
                 {
-                     userLoginModel.Email = data.Email;
-                     userLoginModel.Password = data.Password;
-                    return userLoginModel;
+                    // userLoginModel.Email = data.Email;
+                    // userLoginModel.Password = data.Password;
+                    var token = GenerateSecurityToken(data.Email, data.UserId);
+                    return token;
 
                 }
                 else
                     return null;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+        public string GenerateSecurityToken(string email, long UserId)
+        {
+            try
+            {
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(this.iconfiguration[("JWT:Key")]);
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new[]
+                    {
+                    new Claim(ClaimTypes.Email, email),
+                    new Claim("UserId", UserId.ToString())
+                }),
+                    Expires = DateTime.UtcNow.AddMinutes(30),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                };
+
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+
+                return tokenHandler.WriteToken(token);
             }
             catch (Exception ex)
             {
