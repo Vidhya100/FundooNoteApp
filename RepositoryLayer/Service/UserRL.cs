@@ -51,7 +51,27 @@ namespace RepositoryLayer.Service
                 throw;
             }
         }
+        public UserLoginModel UserLogin(UserLoginModel userLoginModel)
+        {
+            try
+            {
+                var data = this.fundooContext.Usertable.FirstOrDefault(x => x.Email == userLoginModel.Email && x.Password == userLoginModel.Password);
+                if (data != null)
+                {
+                     userLoginModel.Email = data.Email;
+                     userLoginModel.Password = data.Password;
+                    return userLoginModel;
 
+                }
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
 
     }
 }
