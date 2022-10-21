@@ -41,6 +41,19 @@ namespace FundooNoteApp
             services.AddTransient<IUserBL, UserBL>();
             services.AddTransient<IUserRL, UserRL>();
 
+            //added for swagger
+            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1",
+                    new OpenApiInfo
+                    {
+                        Version = "v1",
+                        Title = "Implement Swagger UI",
+                        Description = "A simple example to Implement Swagger UI",
+                    });
+            });
+
 
         }
 
@@ -63,7 +76,11 @@ namespace FundooNoteApp
             {
                 endpoints.MapControllers();
             });
-            
+            //added for swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Showing API V1");
+            });
         }
     }
 }
