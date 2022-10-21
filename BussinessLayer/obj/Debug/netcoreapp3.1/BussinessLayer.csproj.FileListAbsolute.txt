@@ -1,0 +1,15 @@
+E:\CFP201\BussinessLayer\bin\Debug\netcoreapp3.1\BussinessLayer.deps.json
+E:\CFP201\BussinessLayer\bin\Debug\netcoreapp3.1\BussinessLayer.dll
+E:\CFP201\BussinessLayer\bin\Debug\netcoreapp3.1\BussinessLayer.pdb
+E:\CFP201\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csproj.AssemblyReference.cache
+E:\CFP201\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\CFP201\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.AssemblyInfoInputs.cache
+E:\CFP201\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.AssemblyInfo.cs
+E:\CFP201\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csproj.CoreCompileInputs.cache
+E:\CFP201\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.dll
+E:\CFP201\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.pdb
+E:\CFP201\BussinessLayer\bin\Debug\netcoreapp3.1\CommonLayer.dll
+E:\CFP201\BussinessLayer\bin\Debug\netcoreapp3.1\RepositoryLayer.dll
+E:\CFP201\BussinessLayer\bin\Debug\netcoreapp3.1\RepositoryLayer.pdb
+E:\CFP201\BussinessLayer\bin\Debug\netcoreapp3.1\CommonLayer.pdb
+E:\CFP201\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csproj.CopyComplete
