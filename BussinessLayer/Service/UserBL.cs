@@ -8,7 +8,24 @@ using System.Text;
 
 namespace BussinessLayer.Service
 {
-    public class UserBL 
+    public class UserBL : IUserBL
     {
+        private readonly IUserRL iuserRL;
+
+        public UserBL(IUserRL iuserRL)
+        {
+            this.iuserRL = iuserRL;
+        }
+        public UserEntity Registration(UserRegistrationModel userRegistrationModel)
+        {
+            try
+            {
+                return iuserRL.Registration(userRegistrationModel);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

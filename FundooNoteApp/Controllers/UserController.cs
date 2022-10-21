@@ -9,6 +9,32 @@ namespace FundooNoteApp.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-       
+        private readonly IUserBL iuserBL;
+
+        public UserController(IUserBL iuserBL)
+        {
+            this.iuserBL = iuserBL;
+        }
+        [HttpPost]
+        [Route("Register")]
+        public IActionResult RegisterUser(UserRegistrationModel userRegistrationModel)
+        {
+            try
+            {
+                var result = iuserBL.Registration(userRegistrationModel);
+                if (result != null)
+                {
+                    return Ok(new { success = true, message = "Registrastion is succesful", data = result });
+                }
+                else
+                {
+                    return BadRequest(new { success = false, message = "Registration is not successful." });
+                }
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
     }
 }
