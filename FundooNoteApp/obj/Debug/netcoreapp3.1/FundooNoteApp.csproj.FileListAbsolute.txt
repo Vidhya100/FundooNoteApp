@@ -59,3 +59,4 @@ E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authenticat
 E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Experimental.System.Messaging.dll

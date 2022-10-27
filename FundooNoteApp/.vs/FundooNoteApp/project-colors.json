@@ -1,5 +1,26 @@
 {
   "Version": 1,
-  "ProjectMap": {},
-  "NextColorIndex": 0
+  "ProjectMap": {
+    "3de62c31-e558-428b-a2a8-865b3a58b5c7": {
+      "ProjectGuid": "3de62c31-e558-428b-a2a8-865b3a58b5c7",
+      "DisplayName": "RepositoryLayer",
+      "ColorIndex": 0
+    },
+    "8eb705bd-db83-4966-9aa2-593b610a38c8": {
+      "ProjectGuid": "8eb705bd-db83-4966-9aa2-593b610a38c8",
+      "DisplayName": "FundooNoteApp",
+      "ColorIndex": 1
+    },
+    "9f397481-3bd3-48e4-8f67-fdbf56869449": {
+      "ProjectGuid": "9f397481-3bd3-48e4-8f67-fdbf56869449",
+      "DisplayName": "BussinessLayer",
+      "ColorIndex": 2
+    },
+    "4536d2f6-68f9-4f59-bbb3-fbd3b75182e5": {
+      "ProjectGuid": "4536d2f6-68f9-4f59-bbb3-fbd3b75182e5",
+      "DisplayName": "CommonLayer",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
 }
