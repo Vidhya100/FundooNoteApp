@@ -87,7 +87,7 @@ namespace RepositoryLayer.Service
                     new Claim(ClaimTypes.Email, email),
                     new Claim("UserId", UserId.ToString())
                 }),
-                    Expires = DateTime.UtcNow.AddMinutes(30),
+                    Expires = DateTime.UtcNow.AddMinutes(15),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                 };
 
@@ -124,6 +124,26 @@ namespace RepositoryLayer.Service
                 throw;
             }
         }
-        
+        public bool ResetPassword(string email, string newPassword, string confirmPassword)
+        {
+            try
+            {
+                if (newPassword == confirmPassword)
+                {
+                    var user = fundooContext.Usertable.FirstOrDefault(x => x.Email == email);
+                    user.Password = newPassword;
+                    fundooContext.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }                
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

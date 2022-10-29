@@ -80,6 +80,28 @@ namespace FundooNoteApp.Controllers
                 throw;
             }
         }
-      
+        [Authorize]
+        [HttpPut]
+        [Route("ResetPassword")]
+        public IActionResult ResetPassword(string newPassword, string confirmPassword)
+        {
+            try
+            {//we are taking token and converting it into email 
+                var email = User.FindFirst(ClaimTypes.Email).Value.ToString();
+                var resultLog = iuserBL.ResetPassword(email,newPassword,confirmPassword);
+                if (resultLog != null)
+                {
+                    return Ok(new { success = true, message = "Reset Successful" ,data=resultLog});
+                }
+                else
+                {
+                    return BadRequest(new { success = false, message = "Reset denied." });
+                }
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
     }
 }

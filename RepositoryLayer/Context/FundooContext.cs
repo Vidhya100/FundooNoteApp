@@ -14,6 +14,7 @@ namespace RepositoryLayer.Context
         }
         //Dbset create a teable
         public DbSet<UserEntity> Usertable { get; set; }
+        public DbSet<NotesEntity> NotesTable { get; set; }
     }
 }
 
