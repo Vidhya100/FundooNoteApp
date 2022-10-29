@@ -8,6 +8,7 @@ namespace RepositoryLayer.Interface
 {
     public interface INoteRL 
     {
-        public NotesEntity CreateNotes(CreateNoteModel createNoteModel);
+        public NotesEntity CreateNotes(CreateNoteModel createNoteModel, long userId);
+        
     }
 }

@@ -20,6 +20,7 @@ namespace FundooNoteApp.Controllers
         {
             this.inoteBL = inoteBL;
         }
+        [Authorize]
         [HttpPost]
         [Route("CreateNote")]
         public IActionResult CreateNote(CreateNoteModel createNoteModel)
@@ -27,7 +28,7 @@ namespace FundooNoteApp.Controllers
             try
             {
                 long userid = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
-                var result = inoteBL.CreateNotes(createNoteModel);
+                var result = inoteBL.CreateNotes(createNoteModel,userid);
                 if (result != null)
                 {
                     return Ok(new { success = true, message = "Note Added", data = result });
@@ -42,5 +43,6 @@ namespace FundooNoteApp.Controllers
                 throw;
             }
         }
+        
     }
 }

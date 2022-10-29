@@ -15,16 +15,17 @@ namespace BussinessLayer.Service
         {
             this.inoteRL = inoteRL;
         }
-        public NotesEntity CreateNotes(CreateNoteModel createNoteModel)
+        public NotesEntity CreateNotes(CreateNoteModel createNoteModel, long userId)
         {
             try
             {
-                return inoteRL.CreateNotes(createNoteModel);
+                return inoteRL.CreateNotes(createNoteModel, userId);
             }
             catch (Exception ex)
             {
                 throw;
             }
         }
+        
     }
 }

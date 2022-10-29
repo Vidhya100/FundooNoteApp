@@ -14,7 +14,7 @@ namespace RepositoryLayer.Service
     {
         private readonly FundooContext fundooContext;
         private readonly IConfiguration iconfiguration;
-
+        private static NotesEntity notesEntity= new NotesEntity();
         public NoteRL(FundooContext fundooContext, IConfiguration iconfiguration)
         {
             this.fundooContext = fundooContext;
@@ -22,44 +22,41 @@ namespace RepositoryLayer.Service
             
         }
 
-        public NotesEntity CreateNotes(CreateNoteModel createNoteModel)
+        public NotesEntity CreateNotes(CreateNoteModel createNoteModel, long userId)
         {
             try
             {
-                //mapped entity and model properties
-                NotesEntity notesEntity = new NotesEntity();
-                notesEntity.Title = createNoteModel.Title;
-                notesEntity.Description = createNoteModel.Description;
-                notesEntity.Reminder = createNoteModel.Reminder;
-                notesEntity.Color = createNoteModel.Color;
-                notesEntity.Archive = createNoteModel.Archive;
-                notesEntity.Image = createNoteModel.Image;
-                notesEntity.Trash = createNoteModel.Trash;
-                notesEntity.Edited = createNoteModel.Edited;
-                notesEntity.Created = createNoteModel.Created;
-                notesEntity.Pin = createNoteModel.Pin;
+                var result = fundooContext.NotesTable.Where(x => x.UserId == userId);
 
-                //add to table
-                fundooContext.NotesTable.Add(notesEntity);
-                //upload database
-                int result = fundooContext.SaveChanges();
-
-                if (result != 0)
+                if (result != null)
                 {
+                    notesEntity.UserId = userId;
+                    notesEntity.Title = createNoteModel.Title;
+                    notesEntity.Description = createNoteModel.Description;
+                    notesEntity.Reminder = createNoteModel.Reminder;
+                    notesEntity.Color = createNoteModel.Color;
+                    notesEntity.Image = createNoteModel.Image;
+                    notesEntity.Archive = createNoteModel.Archive;
+                    notesEntity.Pin = createNoteModel.Pin;
+                    notesEntity.Trash = createNoteModel.Trash;
+                    notesEntity.Created = createNoteModel.Created;
+                    notesEntity.Edited = createNoteModel.Edited;
+
+                    fundooContext.NotesTable.Add(notesEntity);
+
+                    fundooContext.SaveChanges();
                     return notesEntity;
                 }
                 else
                 {
                     return null;
                 }
-
             }
             catch (Exception ex)
             {
                 throw;
             }
-        }
-
-       
+}
+        
     }
 }
