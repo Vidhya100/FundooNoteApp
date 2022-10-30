@@ -43,6 +43,27 @@ namespace FundooNoteApp.Controllers
                 throw;
             }
         }
-        
+        [HttpGet]
+        [Route("GetNote")]
+        public IActionResult RetrieveNotes(long noteId)
+        {
+            try
+            {
+                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
+                var result = inoteBL.RetrieveNotes(userId,noteId);
+                if (result != null)
+                {
+                    return Ok(new { success = true, message = "Get Notes Successfully", data = result });
+                }
+                else
+                {
+                    return BadRequest(new { success = false, message = "Unable to get Note." });
+                }
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
     }
 }
