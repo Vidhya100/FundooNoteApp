@@ -70,5 +70,38 @@ namespace RepositoryLayer.Service
                 throw;
             }
         }
+
+        public bool UpdateNotes(long noteId, long userId, CreateNoteModel createNoteModel)
+        {
+            try
+            {
+                var result = fundooContext.NotesTable.FirstOrDefault(e => e.NoteID == noteId && e.UserId == userId);
+
+                if (result != null)
+                {
+                    if (createNoteModel.Title != null)
+                    {
+                        result.Title = createNoteModel.Title;
+                    }
+                    if (createNoteModel.Description != null)
+                    {
+                        result.Description = createNoteModel.Description;
+                    }
+
+                    result.Edited = DateTime.Now;
+                    fundooContext.SaveChanges();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
