@@ -1,4 +1,6 @@
-﻿using CommonLayer.Model;
+﻿using CloudinaryDotNet;
+using CommonLayer.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
@@ -204,6 +206,32 @@ namespace RepositoryLayer.Service
             {
                 throw;
             }
+        }
+        public NotesEntity BackgroundColor(long noteId, string color)
+        {
+            try 
+            {
+                var result = fundooContext.NotesTable.FirstOrDefault(e=> e.NoteID == noteId);
+
+                if (result.Color != null)
+                {
+                    result.Color = color;
+                    //fundooContext.NotesTable.Remove(result);
+                    fundooContext.SaveChanges();
+
+                    return result;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch(Exception) 
+            {
+                throw;
+            }
+        }
+        
         }
     }
 }

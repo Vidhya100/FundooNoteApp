@@ -1,5 +1,6 @@
 ﻿using BussinessLayer.Interface;
 using CommonLayer.Model;
+using Microsoft.AspNetCore.Http;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
 using System;
@@ -92,5 +93,17 @@ namespace BussinessLayer.Service
                 throw;
             }
         }
+        public NotesEntity BackgroundColor(long noteId, string color)
+        {
+            try 
+            {
+                return this.inoteRL.BackgroundColor(noteId, color);
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+        }
+        
     }
 }

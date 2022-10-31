@@ -1,6 +1,7 @@
 ﻿using BussinessLayer.Interface;
 using CommonLayer.Model;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Service;
@@ -178,5 +179,31 @@ namespace FundooNoteApp.Controllers
                 throw;
             }
         }
+
+        [HttpPut]
+        [Route("BgColor")]
+        public IActionResult BackgroundColor(long noteId, string color)
+        {
+            try
+            {
+                // long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
+                var result = inoteBL.BackgroundColor(noteId, color);
+                if (result != null)
+                {
+                    return Ok(new { success = true, message = "Background color is changed", data = result });
+                }
+                else
+                {
+                    return BadRequest(new { success = false, message = "Something went wrong." });
+                }
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        
+        
     }
 }
