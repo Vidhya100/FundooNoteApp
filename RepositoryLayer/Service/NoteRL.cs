@@ -61,7 +61,7 @@ namespace RepositoryLayer.Service
         {
             try 
             {
-                var result = fundooContext.NotesTable.Where(e => e.UserId == userId);
+                var result = fundooContext.NotesTable.Where(e => e.NoteID == noteId);
 
                 return result;
             }
