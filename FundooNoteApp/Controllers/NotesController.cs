@@ -147,7 +147,7 @@ namespace FundooNoteApp.Controllers
                 }
                 else
                 {
-                    return BadRequest(new { success = false, message = "Something went wrong." });
+                    return BadRequest(new { success = false, message = "Something went wrong" });
                 }
             }
             catch (System.Exception)
