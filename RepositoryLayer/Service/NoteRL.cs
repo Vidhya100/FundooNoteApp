@@ -231,7 +231,39 @@ namespace RepositoryLayer.Service
                 throw;
             }
         }
-        
+        public string UploadImage(IFormFile image, long noteId, long userId)
+        {
+            try
+            {
+                var result = fundooContext.NotesTable.Where(e=>e.NoteID == noteId && e.UserId == userId);
+                if(result != null)
+                {
+                    Account accounnt = new Account(
+                        this.iconfiguration["CloudinarySettings:CloudName"],
+                       this.iconfiguration["CloudinarySettings:ApiKey"],
+                        this.iconfiguration["CloudinarySettings:ApiSecret"]
+                        );
+                    Cloudinary cloudinary = new Cloudinary(accounnt);
+                    var uploadParams = new CloudinaryDotNet.Actions.ImageUploadParams()
+                    {
+                        File = new FileDescription(image.FileName,image.OpenReadStream()),
+                    };
+                    var uploadResult = cloudinary.Upload(uploadParams);
+                    string imagePath = uploadResult.Url.ToString();
+                    result.Image = imagePath;
+                    fundooContext.SaveChanges();
+
+                    return "Image uploaded successfully";
+                }
+                else 
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

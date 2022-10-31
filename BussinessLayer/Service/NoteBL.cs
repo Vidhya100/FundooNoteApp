@@ -104,6 +104,16 @@ namespace BussinessLayer.Service
                 throw;
             }
         }
-        
+        public string UploadImage(IFormFile image, long noteId, long userId)
+        {
+            try
+            {
+                return this.inoteRL.UploadImage(image, noteId, userId);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

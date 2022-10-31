@@ -203,7 +203,27 @@ namespace FundooNoteApp.Controllers
             }
         }
 
-        
-        
+        [HttpPut]
+        [Route("Image")]
+        public IActionResult UploadImage(IFormFile Image, long noteId)
+        {
+            try
+            {
+                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
+                var result = inoteBL.UploadImage(Image,noteId, userId);
+                if (result != null)
+                {
+                    return Ok(new { success = true, message = "Background color is changed", data = result });
+                }
+                else
+                {
+                    return BadRequest(new { success = false, message = "Something went wrong." });
+                }
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
     }
 }

@@ -17,6 +17,6 @@ namespace RepositoryLayer.Interface
         public bool Trash(long NoteId);
         public bool Archieve(long NoteId);
         public NotesEntity BackgroundColor(long noteId, string color);
-      //  public string UploadImage(IFormFile image, long noteId, long userId);
+        public string UploadImage(IFormFile image, long noteId, long userId);
     }
 }
