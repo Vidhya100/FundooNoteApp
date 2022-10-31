@@ -70,5 +70,17 @@ namespace BussinessLayer.Service
                 throw;
             }
         }
+        public bool Trash(long NoteId)
+        {
+            try
+            {
+                return this.inoteRL.Trash(NoteId);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        
     }
 }
