@@ -60,3 +60,8 @@ E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocol
 E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Experimental.System.Messaging.dll
+E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
+E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
