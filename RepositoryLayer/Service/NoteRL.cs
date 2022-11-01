@@ -235,7 +235,7 @@ namespace RepositoryLayer.Service
         {
             try
             {
-                var result = fundooContext.NotesTable.Where(e=>e.NoteID == noteId && e.UserId == userId);
+                var result = fundooContext.NotesTable.FirstOrDefault(e=>e.NoteID == noteId && e.UserId == userId);
                 if(result != null)
                 {
                     Account accounnt = new Account(
