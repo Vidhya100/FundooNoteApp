@@ -9,5 +9,6 @@ namespace RepositoryLayer.Interface
     public interface ICollabRL
     {
         public CollabratorEntity CreateCollab(long noteId, string email);
+        public IEnumerable<CollabratorEntity> RetriveCollab(long noteId);
     }
 }

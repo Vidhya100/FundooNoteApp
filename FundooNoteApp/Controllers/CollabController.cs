@@ -22,7 +22,7 @@ namespace FundooNoteApp.Controllers
         }
         [Authorize]
         [HttpPost]
-        [Route("Create_Collab")]
+        [Route("Create")]
         public IActionResult CreateCollab(long noteId, string email)
         {
             try
@@ -38,6 +38,31 @@ namespace FundooNoteApp.Controllers
                 else
                 {
                     return BadRequest(new { success = false, mesage = "Unable to add collabrator." });
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        [Authorize]
+        [HttpGet]
+        [Route("Retrieve")]
+        public IActionResult RetrieveCollab(long noteId)
+        {
+            try
+            {
+                //long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
+
+                var result = icollabBL.RetriveCollab(noteId);
+
+                if (result != null)
+                {
+                    return Ok(new { success = true, mesage = "Collabrator feched", data = result });
+                }
+                else
+                {
+                    return BadRequest(new { success = false, mesage = "Data Not Found." });
                 }
             }
             catch (Exception)

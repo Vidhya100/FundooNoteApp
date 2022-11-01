@@ -28,5 +28,17 @@ namespace BussinessLayer.Service
                 throw;
             }
         }
+
+        public IEnumerable<CollabratorEntity> RetriveCollab(long noteId)
+        {
+            try
+            {
+                return this.icollabRL.RetriveCollab(noteId);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }
