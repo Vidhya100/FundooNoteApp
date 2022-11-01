@@ -61,5 +61,30 @@ namespace RepositoryLayer.Service
                 throw;
             }
         }
+
+        public bool RemoveCollab(long collabId)
+        {
+            try
+            {
+                var result = fundooContex.CollabTable.FirstOrDefault(e => e.CollabId == collabId);
+
+                if (result != null)
+                {
+
+                    fundooContex.CollabTable.Remove(result);
+                    fundooContex.SaveChanges();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
