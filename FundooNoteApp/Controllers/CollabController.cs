@@ -23,13 +23,13 @@ namespace FundooNoteApp.Controllers
         [Authorize]
         [HttpPost]
         [Route("Create_Collab")]
-        public IActionResult CreateCollab(long noteId, CollabModel collabModel)
+        public IActionResult CreateCollab(long noteId, string email)
         {
             try
             {
-                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
+                //long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
 
-                var result = icollabBL.CreateCollab(noteId, userId, collabModel);
+                var result = icollabBL.CreateCollab(noteId, email);
 
                 if (result != null)
                 {
@@ -47,3 +47,4 @@ namespace FundooNoteApp.Controllers
         }
     }
 }
+

@@ -8,6 +8,6 @@ namespace RepositoryLayer.Interface
 {
     public interface ICollabRL
     {
-        public CollabratorEntity CreateCollab(long userId, long noteId, CollabModel collabModel);
+        public CollabratorEntity CreateCollab(long noteId, string email);
     }
 }

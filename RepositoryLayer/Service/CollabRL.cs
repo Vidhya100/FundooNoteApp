@@ -5,6 +5,7 @@ using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RepositoryLayer.Service
@@ -20,32 +21,34 @@ namespace RepositoryLayer.Service
             this.iconfiguration = iconfiguration;
         }
 
-        public CollabratorEntity CreateCollab(long noteId, long userId, CollabModel collabModel)
+        public CollabratorEntity CreateCollab(long noteId, string email)
         {
             try
             {
-                CollabratorEntity collabratorEntity = new CollabratorEntity();  
-                collabratorEntity.UserId =userId;
-                collabratorEntity.NoteID =noteId;
-                collabratorEntity.Email = collabModel.Email;
-
-                fundooContex.CollabTable.Add(collabratorEntity);
-                int result = fundooContex.SaveChanges();
-
-                if (result != null)
+                var noteResult = fundooContex.NotesTable.Where(e => e.NoteID == noteId).FirstOrDefault();
+                var emailResult = fundooContex.Usertable.Where(e => e.Email == email).FirstOrDefault();
+                if (emailResult != null && noteResult != null)
                 {
+                    CollabratorEntity collabratorEntity = new CollabratorEntity();
+                    collabratorEntity.UserId = emailResult.UserId;
+                    collabratorEntity.NoteID = noteResult.NoteID;
+                    collabratorEntity.Email = emailResult.Email;
+
+                    fundooContex.CollabTable.Add(collabratorEntity);
+                    int result = fundooContex.SaveChanges();
                     return collabratorEntity;
-                }
-                else 
+                }      
+                else
                 {
                     return null;
                 }
-
             }
             catch (Exception ex)
             {
                 throw;
             }
         }
+
+        
     }
 }

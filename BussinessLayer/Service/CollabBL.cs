@@ -17,11 +17,11 @@ namespace BussinessLayer.Service
             this.icollabRL = icollabRL;
         }
 
-        public CollabratorEntity CreateCollab(long noteId, long userId, CollabModel collabmodel)
+        public CollabratorEntity CreateCollab(long noteId, string email)
         {
             try 
             {
-                return this.icollabRL.CreateCollab(noteId, userId, collabmodel);
+                return this.icollabRL.CreateCollab(noteId, email);
             }
             catch (Exception ex)
             {
