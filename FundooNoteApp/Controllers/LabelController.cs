@@ -19,6 +19,55 @@ namespace FundooNoteApp.Controllers
             this.fundooContext = fundooContext;
             this.iLabelBL = iLabelBL;
         }
-        
+        [Authorize]
+        [HttpPost]
+        [Route("Create")]
+        public IActionResult CreateLabel(long noteId, string labelname)
+        {
+            try
+            {
+                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
+
+                var result = iLabelBL.CreateLabel(noteId, userId, labelname);
+
+                if (result != null)
+                {
+                    return Ok(new { success = true, mesage = "Label created", data = result });
+                }
+                else
+                {
+                    return BadRequest(new { success = false, mesage = "Unable to add Label." });
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        [Authorize]
+        [HttpGet]
+        [Route("Retrieve")]
+        public IActionResult RetrieveLabel(long labelId)
+        {
+            try
+            {
+                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
+
+                var result = iLabelBL.RetriveLabel(labelId);
+
+                if (result != null)
+                {
+                    return Ok(new { success = true, mesage = "Label retrieved", data = result });
+                }
+                else
+                {
+                    return BadRequest(new { success = false, mesage = "Unable to retrieved Label." });
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
