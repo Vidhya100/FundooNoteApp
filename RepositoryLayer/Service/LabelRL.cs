@@ -29,9 +29,9 @@ namespace RepositoryLayer.Service
                     labelEntity.UserId = userId;
                     labelEntity.LabelName = labelName;
 
-                    fundooContext.LabelTable.Add(labelEntity);  
+                    fundooContext.LabelTable.Add(labelEntity);
                     int saveResult = fundooContext.SaveChanges();
-                    if(saveResult > 0)
+                    if (saveResult > 0)
                     {
                         return true;
                     }
@@ -44,7 +44,7 @@ namespace RepositoryLayer.Service
                 {
                     return false;
                 }
-               
+
             }
             catch (Exception ex)
             {
@@ -76,28 +76,6 @@ namespace RepositoryLayer.Service
                     fundooContext.LabelTable.Remove(result);
                     fundooContext.SaveChanges();
 
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        public bool RenameLabel(long userId, string oldLabelName, string newLabelName)
-        {
-            try
-            {
-
-                var result = fundooContext.LabelTable.Where(x => x.UserId == userId && x.LabelName == oldLabelName).FirstOrDefault();
-                if (result != null)
-                {
-                    result.LabelName = newLabelName;
-                    fundooContext.SaveChanges();
                     return true;
                 }
                 else

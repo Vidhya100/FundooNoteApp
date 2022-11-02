@@ -95,30 +95,6 @@ namespace FundooNoteApp.Controllers
             }
         }
 
-        [Authorize]
-        [HttpPut]
-        [Route("Edit")]
-        public IActionResult RenameLabel(string labelName, string newLabelName)
-        {
-            try
-            {
-                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
-
-                var result = iLabelBL.RenameLabel(userId,labelName,newLabelName);
-
-                if (result != null)
-                {
-                    return Ok(new { success = true, mesage = "Label Updated", data = result });
-                }
-                else
-                {
-                    return BadRequest(new { success = false, mesage = "Unable to Update Label." });
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        
     }
 }
