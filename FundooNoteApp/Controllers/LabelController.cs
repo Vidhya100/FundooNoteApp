@@ -19,30 +19,6 @@ namespace FundooNoteApp.Controllers
             this.fundooContext = fundooContext;
             this.iLabelBL = iLabelBL;
         }
-        [Authorize]
-        [HttpPost]
-        [Route("Create")]
-        public IActionResult CreateLabel(long noteId, string labelname)
-        {
-            try
-            {
-                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
-
-                var result = iLabelBL.CreateLabel(noteId, userId, labelname);
-
-                if (result != null)
-                {
-                    return Ok(new { success = true, mesage = "Label created", data = result });
-                }
-                else
-                {
-                    return BadRequest(new { success = false, mesage = "Unable to add Label." });
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        
     }
 }
