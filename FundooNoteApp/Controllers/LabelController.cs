@@ -51,7 +51,7 @@ namespace FundooNoteApp.Controllers
         {
             try
             {
-                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
+               // long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
 
                 var result = iLabelBL.RetriveLabel(labelId);
 
@@ -62,6 +62,57 @@ namespace FundooNoteApp.Controllers
                 else
                 {
                     return BadRequest(new { success = false, mesage = "Unable to retrieved Label." });
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        [Authorize]
+        [HttpDelete]
+        [Route("Delete")]
+        public IActionResult DeleteLabel(long labelId)
+        {
+            try
+            {
+                //long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
+
+                var result = iLabelBL.DeleteLabel(labelId);
+
+                if (result != null)
+                {
+                    return Ok(new { success = true, mesage = "Label Deleted", data = result });
+                }
+                else
+                {
+                    return BadRequest(new { success = false, mesage = "Unable to Delete Label." });
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        [Authorize]
+        [HttpPut]
+        [Route("Edit")]
+        public IActionResult RenameLabel(string labelName, string newLabelName)
+        {
+            try
+            {
+                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "UserId").Value);
+
+                var result = iLabelBL.RenameLabel(userId,labelName,newLabelName);
+
+                if (result != null)
+                {
+                    return Ok(new { success = true, mesage = "Label Updated", data = result });
+                }
+                else
+                {
+                    return BadRequest(new { success = false, mesage = "Unable to Update Label." });
                 }
             }
             catch (Exception)

@@ -40,5 +40,29 @@ namespace BussinessLayer.Service
                 throw;
             }
         }
+        public bool DeleteLabel(long labelId)
+        {
+            try
+            {
+                return this.ilabelRL.DeleteLabel(labelId);
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public bool RenameLabel(long userId, string oldLabelName, string newLabelName)
+        {
+            try
+            {
+                return this.ilabelRL.RenameLabel(userId, oldLabelName,newLabelName);
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }
