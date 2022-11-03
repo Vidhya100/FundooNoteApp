@@ -17,6 +17,7 @@ namespace RepositoryLayer.Service
     {
         private readonly FundooContext fundooContext;
         private readonly IConfiguration iconfiguration;
+        public static string Key = "vidhya@@kfxcbv@";
         //daa of regitered dependency it 
         public UserRL(FundooContext fundooContext, IConfiguration iconfiguration)
         {
@@ -31,7 +32,7 @@ namespace RepositoryLayer.Service
                 userEntity.FirstName = userRegistrationModel.FirstName;
                 userEntity.LastName = userRegistrationModel.LastName;
                 userEntity.Email = userRegistrationModel.Email;
-                userEntity.Password = userRegistrationModel.Password;
+                userEntity.Password = ConvertoEncrypt(userRegistrationModel.Password);
 
                 fundooContext.Usertable.Add(userEntity);
 
@@ -51,12 +52,31 @@ namespace RepositoryLayer.Service
                 throw;
             }
         }
+        public static string ConvertoEncrypt(string password)
+        {
+            if (string.IsNullOrEmpty(password))
+                 return "";
+            password += Key;
+            var passwordBytes = Encoding.UTF8.GetBytes(password);
+            return Convert.ToBase64String(passwordBytes);
+        }
+
+        public static string ConvertoDecrypt(string base64EncodeData)
+        {
+            if (string.IsNullOrEmpty(base64EncodeData))
+                return "";
+            var base64EncodeBytes = Convert.FromBase64String(base64EncodeData);
+            var result = Encoding.UTF8.GetString(base64EncodeBytes);
+            result = result.Substring(0, result.Length - Key.Length);
+            return result;
+        }
         public string UserLogin(UserLoginModel userLoginModel)
         {
             try
             {
-                var data = this.fundooContext.Usertable.FirstOrDefault(x => x.Email == userLoginModel.Email && x.Password == userLoginModel.Password);
-                if (data != null)
+                var data = this.fundooContext.Usertable.FirstOrDefault(x => x.Email == userLoginModel.Email );
+                var dPass = ConvertoDecrypt(data.Password);
+                if (dPass == userLoginModel.Password && data != null)
                 {
                     // userLoginModel.Email = data.Email;
                     // userLoginModel.Password = data.Password;
