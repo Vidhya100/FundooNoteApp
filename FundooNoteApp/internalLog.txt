@@ -1,0 +1,32 @@
+2022-11-04 14:26:19.8074 Info Message Template Auto Format enabled
+2022-11-04 14:26:19.8409 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-04 14:26:19.9016 Info Adding target FileTarget(Name=alldata)
+2022-11-04 14:26:19.9016 Info Adding target FileTarget(Name=otherFile-web)
+2022-11-04 14:26:19.9404 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.config
+2022-11-04 14:26:19.9744 Info Configuration initialized.
+2022-11-04 14:26:20.0265 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.0.5.1426. Product version: 5.0.5+ace23d89ecf3dc2675648414a1f01ee9c1b2383d. GlobalAssemblyCache: False
+2022-11-04 14:26:20.0265 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.config
+2022-11-04 14:30:16.6043 Info Message Template Auto Format enabled
+2022-11-04 14:30:16.6367 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-04 14:30:16.6970 Info Adding target FileTarget(Name=alldata)
+2022-11-04 14:30:16.6970 Info Adding target FileTarget(Name=otherFile-web)
+2022-11-04 14:30:16.7249 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.config
+2022-11-04 14:30:16.7487 Info Configuration initialized.
+2022-11-04 14:30:16.7650 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.0.5.1426. Product version: 5.0.5+ace23d89ecf3dc2675648414a1f01ee9c1b2383d. GlobalAssemblyCache: False
+2022-11-04 14:30:16.7650 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.config
+2022-11-04 14:34:21.2196 Info Message Template Auto Format enabled
+2022-11-04 14:34:21.2676 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-04 14:34:21.4082 Info Adding target FileTarget(Name=alldata)
+2022-11-04 14:34:21.4082 Info Adding target FileTarget(Name=otherFile-web)
+2022-11-04 14:34:21.4635 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.config
+2022-11-04 14:34:21.4925 Info Configuration initialized.
+2022-11-04 14:34:21.5139 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.0.5.1426. Product version: 5.0.5+ace23d89ecf3dc2675648414a1f01ee9c1b2383d. GlobalAssemblyCache: False
+2022-11-04 14:34:21.5148 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.config
+2022-11-04 14:38:36.3008 Info Message Template Auto Format enabled
+2022-11-04 14:38:36.3477 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-04 14:38:36.4295 Info Adding target FileTarget(Name=alldata)
+2022-11-04 14:38:36.4295 Info Adding target FileTarget(Name=otherFile-web)
+2022-11-04 14:38:36.4798 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.config
+2022-11-04 14:38:36.5179 Info Configuration initialized.
+2022-11-04 14:38:36.5402 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.0.5.1426. Product version: 5.0.5+ace23d89ecf3dc2675648414a1f01ee9c1b2383d. GlobalAssemblyCache: False
+2022-11-04 14:38:36.5402 Info Validating config: TargetNames=alldata, otherFile-web, ConfigItems=45, FilePath=E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.config

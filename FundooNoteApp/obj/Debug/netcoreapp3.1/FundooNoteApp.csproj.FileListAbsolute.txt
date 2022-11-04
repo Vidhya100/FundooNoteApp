@@ -70,3 +70,7 @@ E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\Pipelines.Sockets.Unofficial.dll
 E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\StackExchange.Redis.dll
 E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
 E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.config
+E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.dll
+E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+E:\CFP201\FundooNoteApp\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll

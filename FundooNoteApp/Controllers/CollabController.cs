@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
@@ -23,13 +24,16 @@ namespace FundooNoteApp.Controllers
         private readonly FundooContext fundooContext;
         private readonly IMemoryCache memoryCache;
         private readonly IDistributedCache distributedCache;
+        private readonly ILogger<CollabController> logger;
 
-        public CollabController(ICollabBL icollabBL, FundooContext fundooContext, IMemoryCache memoryCache, IDistributedCache distributedCache)
+        public CollabController(ICollabBL icollabBL, FundooContext fundooContext, IMemoryCache memoryCache, 
+            IDistributedCache distributedCache, ILogger<CollabController> logger)
         {
             this.fundooContext = fundooContext;
             this.icollabBL = icollabBL;
             this.memoryCache = memoryCache;
             this.distributedCache = distributedCache;
+            this.logger = logger;
         }
         [Authorize]
         [HttpPost]

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
@@ -22,13 +23,16 @@ namespace FundooNoteApp.Controllers
         private readonly FundooContext fundooContext;
         private readonly IMemoryCache memoryCache;
         private readonly IDistributedCache distributedCache;
+        private readonly ILogger<LabelController> logger;
 
-        public LabelController(ILabelBL iLabelBL, FundooContext fundooContext, IMemoryCache memoryCache, IDistributedCache distributedCache)
+        public LabelController(ILabelBL iLabelBL, FundooContext fundooContext, IMemoryCache memoryCache, 
+            IDistributedCache distributedCache, ILogger<LabelController> logger)
         {
             this.fundooContext = fundooContext;
             this.iLabelBL = iLabelBL;
             this.memoryCache = memoryCache;
             this.distributedCache = distributedCache;
+            this.logger = logger;
         }
         [Authorize]
         [HttpPost]

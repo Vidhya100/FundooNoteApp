@@ -148,10 +148,10 @@ namespace RepositoryLayer.Service
         {
             try
             {
-                if (newPassword == confirmPassword)
+                if (ConvertoEncrypt(newPassword) == ConvertoEncrypt(confirmPassword))
                 {
                     var user = fundooContext.Usertable.FirstOrDefault(x => x.Email == email);
-                    user.Password = newPassword;
+                    user.Password = ConvertoEncrypt(newPassword);
                     fundooContext.SaveChanges();
                     return true;
                 }

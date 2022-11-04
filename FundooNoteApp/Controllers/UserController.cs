@@ -3,6 +3,8 @@ using CommonLayer.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Security.Claims;
 
 namespace FundooNoteApp.Controllers
@@ -12,10 +14,11 @@ namespace FundooNoteApp.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserBL iuserBL;
-
-        public UserController(IUserBL iuserBL)
+        private readonly ILogger<UserController> logger;
+        public UserController(IUserBL iuserBL, ILogger<UserController> logger)
         {
             this.iuserBL = iuserBL;
+            this.logger = logger;
         }
         [HttpPost]
         [Route("Register")]
@@ -26,16 +29,19 @@ namespace FundooNoteApp.Controllers
                 var result = iuserBL.Registration(userRegistrationModel);
                 if (result != null)
                 {
+                    logger.LogInformation("User Registration Succesfull");
                     return Ok(new { success = true, message = "Registrastion is succesful", data = result });
                 }
                 else
                 {
+                    logger.LogInformation("User Registration UnSuccesfull");
                     return BadRequest(new { success = false, message = "Registration is not successful." });
                 }
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-                throw;
+                logger.LogError(ex.ToString());
+                return this.BadRequest(new { Success = false, message = ex.Message });
             }
         }
         [HttpPost]
@@ -47,16 +53,19 @@ namespace FundooNoteApp.Controllers
                 var result = iuserBL.UserLogin(userLoginModel);
                 if (result != null)
                 {
+                    logger.LogInformation("User Login Succesfull");
                     return Ok(new { success = true, message = "Login successful", data = result });
                 }
                 else
                 {
+                    logger.LogInformation("User Login UnSuccesfull");
                     return BadRequest(new { success = false, message = "Login denied." });
                 }
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-                throw;
+                logger.LogError(ex.ToString());
+                return BadRequest(new { success = false, message = ex.Message });
             }
         }
         [HttpPost]
@@ -68,16 +77,19 @@ namespace FundooNoteApp.Controllers
                 var resultLog = iuserBL.ForgetPassword(email);
                 if (resultLog != null)
                 {
+                    logger.LogInformation("Reset Mail Send");
                     return Ok(new { success = true, message = "Reset Email Send" });
                 }
                 else
                 {
+                    logger.LogInformation("Reset Unsuccessful");
                     return BadRequest(new { success = false, message = "Reset Unsuccessful." });
                 }
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-                throw;
+                logger.LogError(ex.ToString());
+                return BadRequest(new { success = false, message = ex.Message });
             }
         }
         [Authorize]
@@ -91,16 +103,19 @@ namespace FundooNoteApp.Controllers
                 var resultLog = iuserBL.ResetPassword(email,newPassword,confirmPassword);
                 if (resultLog != null)
                 {
+                    logger.LogInformation("Reset Successful");
                     return Ok(new { success = true, message = "Reset Successful" ,data=resultLog});
                 }
                 else
                 {
+                    logger.LogInformation("Reset Unsuccessful");
                     return BadRequest(new { success = false, message = "Reset denied." });
                 }
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-                throw;
+                logger.LogError(ex.ToString());
+                return BadRequest(new { success = false, message = ex.Message });
             }
         }
     }
