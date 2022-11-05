@@ -40,7 +40,7 @@ namespace FundooNoteApp.Controllers
         }
         [Authorize]
         [HttpPost]
-        [Route("CreateNote")]
+        [Route("Create")]
         public IActionResult CreateNote(CreateNoteModel createNoteModel)
         {
             try
@@ -65,7 +65,7 @@ namespace FundooNoteApp.Controllers
             }
         }
         [HttpGet]
-        [Route("GetNote")]
+        [Route("Get")]
         public IActionResult RetrieveNotes(long noteId)
         {
             try
