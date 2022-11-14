@@ -1,0 +1,202 @@
+2022-11-12 21:40:18.3616 DEBUG Hosting starting
+2022-11-12 21:40:19.1751 INFO User profile is available. Using 'C:\Users\world\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-12 21:40:19.1995 DEBUG Reading data from file 'C:\Users\world\AppData\Local\ASP.NET\DataProtection-Keys\key-466e9856-e694-4e5b-8f46-c435783b298d.xml'.
+2022-11-12 21:40:19.2389 DEBUG Found key {466e9856-e694-4e5b-8f46-c435783b298d}.
+2022-11-12 21:40:19.2665 DEBUG Considering key {466e9856-e694-4e5b-8f46-c435783b298d} with expiration date 2023-01-19 10:47:02Z as default key.
+2022-11-12 21:40:19.4454 DEBUG Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.30.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-11-12 21:40:19.4454 DEBUG Decrypting secret element using Windows DPAPI.
+2022-11-12 21:40:19.4511 DEBUG Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.30.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-11-12 21:40:19.4511 DEBUG Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC.
+2022-11-12 21:40:19.4511 DEBUG Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC.
+2022-11-12 21:40:19.4712 DEBUG Using key {466e9856-e694-4e5b-8f46-c435783b298d} as the default key.
+2022-11-12 21:40:19.4712 DEBUG Key ring with default key {466e9856-e694-4e5b-8f46-c435783b298d} was loaded during application startup.
+2022-11-12 21:40:20.2098 DEBUG Loaded hosting startup assembly FundooNoteApp
+2022-11-12 21:40:20.2098 DEBUG Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2022-11-12 21:40:20.2098 DEBUG Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2022-11-12 21:40:20.2098 INFO Application started. Press Ctrl+C to shut down.
+2022-11-12 21:40:20.2098 INFO Hosting environment: Development
+2022-11-12 21:40:20.2098 INFO Content root path: E:\CFP201\FundooNoteApp
+2022-11-12 21:40:20.2098 DEBUG Hosting started
+2022-11-12 21:40:20.3717 DEBUG Connection ID "18302628887244308629" disconnecting.
+2022-11-12 21:40:20.3937 INFO Request starting HTTP/2.0 GET https://localhost:44377/swagger/index.html  
+2022-11-12 21:40:20.3937 INFO Request starting HTTP/2.0 GET https://localhost:44377/weatherforecast  
+2022-11-12 21:40:20.4695 DEBUG Wildcard detected, all requests with hosts will be allowed.
+2022-11-12 21:40:20.4695 DEBUG Wildcard detected, all requests with hosts will be allowed.
+2022-11-12 21:40:20.4695 TRACE All hosts are allowed.
+2022-11-12 21:40:20.4695 TRACE All hosts are allowed.
+2022-11-12 21:40:20.5257 DEBUG No candidates found for the request path '/swagger/index.html'
+2022-11-12 21:40:20.5257 DEBUG Request did not match any endpoints
+2022-11-12 21:40:20.5306 DEBUG 1 candidate(s) found for the request path '/weatherforecast'
+2022-11-12 21:40:20.5306 DEBUG Endpoint 'FundooNoteApp.Controllers.WeatherForecastController.Get (FundooNoteApp)' with route pattern 'WeatherForecast' is valid for the request path '/weatherforecast'
+2022-11-12 21:40:20.5306 DEBUG Request matched endpoint 'FundooNoteApp.Controllers.WeatherForecastController.Get (FundooNoteApp)'
+2022-11-12 21:40:21.8999 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2022-11-12 21:40:21.8999 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2022-11-12 21:40:21.9034 INFO Executing endpoint 'FundooNoteApp.Controllers.WeatherForecastController.Get (FundooNoteApp)'
+2022-11-12 21:40:21.9505 DEBUG Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider
+2022-11-12 21:40:21.9895 INFO Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[FundooNoteApp.WeatherForecast] Get() on controller FundooNoteApp.Controllers.WeatherForecastController (FundooNoteApp).
+2022-11-12 21:40:21.9895 DEBUG Execution plan of authorization filters (in the following order): None
+2022-11-12 21:40:21.9895 DEBUG Execution plan of resource filters (in the following order): None
+2022-11-12 21:40:21.9895 DEBUG Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)
+2022-11-12 21:40:21.9895 DEBUG Execution plan of exception filters (in the following order): None
+2022-11-12 21:40:21.9895 DEBUG Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)
+2022-11-12 21:40:21.9895 DEBUG Executing controller factory for controller FundooNoteApp.Controllers.WeatherForecastController (FundooNoteApp)
+2022-11-12 21:40:21.9895 DEBUG Executed controller factory for controller FundooNoteApp.Controllers.WeatherForecastController (FundooNoteApp)
+2022-11-12 21:40:21.9895 TRACE Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2022-11-12 21:40:21.9895 TRACE Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2022-11-12 21:40:21.9895 TRACE Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2022-11-12 21:40:21.9895 TRACE Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2022-11-12 21:40:22.0041 INFO Executing action method FundooNoteApp.Controllers.WeatherForecastController.Get (FundooNoteApp) - Validation state: Valid
+2022-11-12 21:40:22.0041 INFO Executed action method FundooNoteApp.Controllers.WeatherForecastController.Get (FundooNoteApp), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2.7651ms.
+2022-11-12 21:40:22.0041 TRACE Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2022-11-12 21:40:22.0041 TRACE Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2022-11-12 21:40:22.0041 TRACE Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2022-11-12 21:40:22.0041 TRACE Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2022-11-12 21:40:22.0146 TRACE Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2022-11-12 21:40:22.0146 TRACE Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2022-11-12 21:40:22.0146 TRACE Before executing action result Microsoft.AspNetCore.Mvc.ObjectResult.
+2022-11-12 21:40:22.0146 DEBUG List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter
+2022-11-12 21:40:22.0146 DEBUG No information found on request to perform content negotiation.
+2022-11-12 21:40:22.0146 DEBUG Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2022-11-12 21:40:22.0146 DEBUG Attempting to select the first formatter in the output formatters list which can write the result.
+2022-11-12 21:40:22.0146 DEBUG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2022-11-12 21:40:22.0146 INFO Executing ObjectResult, writing value of type 'FundooNoteApp.WeatherForecast[]'.
+2022-11-12 21:40:22.0588 DEBUG Response markup is scheduled to include browser refresh script injection.
+2022-11-12 21:40:22.1130 TRACE After executing action result Microsoft.AspNetCore.Mvc.ObjectResult.
+2022-11-12 21:40:22.1130 TRACE Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2022-11-12 21:40:22.1130 TRACE Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2022-11-12 21:40:22.1130 INFO Executed action FundooNoteApp.Controllers.WeatherForecastController.Get (FundooNoteApp) in 122.2304ms
+2022-11-12 21:40:22.1130 INFO Executed endpoint 'FundooNoteApp.Controllers.WeatherForecastController.Get (FundooNoteApp)'
+2022-11-12 21:40:22.1298 INFO Request finished in 1738.0719ms 200 application/json; charset=utf-8
+2022-11-12 21:40:22.7609 DEBUG Response markup was updated to include browser refresh script injection.
+2022-11-12 21:40:22.7667 INFO Request finished in 2376.6454ms 200 text/html;charset=utf-8
+2022-11-12 21:40:22.8833 INFO Request starting HTTP/2.0 GET https://localhost:44377/_framework/aspnetcore-browser-refresh.js  
+2022-11-12 21:40:22.9094 INFO Request finished in 31.5859ms 200 application/javascript; charset=utf-8
+2022-11-12 21:40:22.9193 INFO Request starting HTTP/2.0 GET https://localhost:44377/swagger/swagger-ui.css  
+2022-11-12 21:40:22.9193 TRACE All hosts are allowed.
+2022-11-12 21:40:22.9193 DEBUG No candidates found for the request path '/swagger/swagger-ui.css'
+2022-11-12 21:40:22.9193 DEBUG Request did not match any endpoints
+2022-11-12 21:40:22.9193 INFO Request starting HTTP/2.0 GET https://localhost:44377/swagger/swagger-ui-bundle.js  
+2022-11-12 21:40:22.9193 TRACE All hosts are allowed.
+2022-11-12 21:40:22.9193 DEBUG No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2022-11-12 21:40:22.9193 DEBUG Request did not match any endpoints
+2022-11-12 21:40:22.9193 INFO Request starting HTTP/2.0 GET https://localhost:44377/swagger/swagger-ui-standalone-preset.js  
+2022-11-12 21:40:22.9193 TRACE All hosts are allowed.
+2022-11-12 21:40:22.9193 DEBUG No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2022-11-12 21:40:22.9193 DEBUG Request did not match any endpoints
+2022-11-12 21:40:22.9193 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2022-11-12 21:40:22.9193 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2022-11-12 21:40:22.9418 TRACE Range header's value is empty.
+2022-11-12 21:40:22.9418 INFO The file /swagger-ui-standalone-preset.js was not modified
+2022-11-12 21:40:22.9418 DEBUG Handled. Status code: 304 File: /swagger-ui-standalone-preset.js
+2022-11-12 21:40:22.9418 INFO Request finished in 26.0972ms 304 application/javascript
+2022-11-12 21:40:22.9508 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2022-11-12 21:40:22.9661 TRACE Range header's value is empty.
+2022-11-12 21:40:22.9661 INFO The file /swagger-ui.css was not modified
+2022-11-12 21:40:22.9661 DEBUG Handled. Status code: 304 File: /swagger-ui.css
+2022-11-12 21:40:22.9661 INFO Request finished in 47.3049ms 304 text/css
+2022-11-12 21:40:22.9661 TRACE Range header's value is empty.
+2022-11-12 21:40:22.9661 INFO The file /swagger-ui-bundle.js was not modified
+2022-11-12 21:40:22.9661 DEBUG Handled. Status code: 304 File: /swagger-ui-bundle.js
+2022-11-12 21:40:22.9661 INFO Request finished in 45.7437ms 304 application/javascript
+2022-11-12 21:40:23.8164 INFO Request starting HTTP/2.0 GET https://localhost:44377/swagger/v1/swagger.json  
+2022-11-12 21:40:23.8164 TRACE All hosts are allowed.
+2022-11-12 21:40:23.8164 DEBUG No candidates found for the request path '/swagger/v1/swagger.json'
+2022-11-12 21:40:23.8164 DEBUG Request did not match any endpoints
+2022-11-12 21:40:23.8164 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2022-11-12 21:40:23.9304 INFO Request starting HTTP/2.0 GET https://localhost:44377/swagger/favicon-32x32.png  
+2022-11-12 21:40:23.9304 TRACE All hosts are allowed.
+2022-11-12 21:40:23.9304 DEBUG No candidates found for the request path '/swagger/favicon-32x32.png'
+2022-11-12 21:40:23.9361 DEBUG Request did not match any endpoints
+2022-11-12 21:40:23.9361 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2022-11-12 21:40:23.9361 TRACE Range header's value is empty.
+2022-11-12 21:40:23.9361 INFO The file /favicon-32x32.png was not modified
+2022-11-12 21:40:23.9361 DEBUG Handled. Status code: 304 File: /favicon-32x32.png
+2022-11-12 21:40:23.9361 INFO Request finished in 15.809ms 304 image/png
+2022-11-12 21:40:24.0721 INFO Request finished in 256.1912ms 200 application/json;charset=utf-8
+2022-11-12 21:42:12.9305 INFO Request starting HTTP/2.0 POST https://localhost:44377/api/User/Register application/json 109
+2022-11-12 21:42:12.9305 TRACE All hosts are allowed.
+2022-11-12 21:42:12.9403 DEBUG 1 candidate(s) found for the request path '/api/User/Register'
+2022-11-12 21:42:12.9403 DEBUG Endpoint 'FundooNoteApp.Controllers.UserController.RegisterUser (FundooNoteApp)' with route pattern 'api/User/Register' is valid for the request path '/api/User/Register'
+2022-11-12 21:42:12.9403 DEBUG Request matched endpoint 'FundooNoteApp.Controllers.UserController.RegisterUser (FundooNoteApp)'
+2022-11-12 21:42:12.9403 DEBUG AuthenticationScheme: Bearer was not authenticated.
+2022-11-12 21:42:12.9403 INFO Executing endpoint 'FundooNoteApp.Controllers.UserController.RegisterUser (FundooNoteApp)'
+2022-11-12 21:42:12.9730 INFO Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RegisterUser(CommonLayer.Model.UserRegistrationModel) on controller FundooNoteApp.Controllers.UserController (FundooNoteApp).
+2022-11-12 21:42:12.9730 DEBUG Execution plan of authorization filters (in the following order): None
+2022-11-12 21:42:12.9730 DEBUG Execution plan of resource filters (in the following order): None
+2022-11-12 21:42:12.9730 DEBUG Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)
+2022-11-12 21:42:12.9730 DEBUG Execution plan of exception filters (in the following order): None
+2022-11-12 21:42:12.9730 DEBUG Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)
+2022-11-12 21:42:12.9730 DEBUG Executing controller factory for controller FundooNoteApp.Controllers.UserController (FundooNoteApp)
+2022-11-12 21:42:14.4740 DEBUG An 'IServiceProvider' was created for internal use by Entity Framework.
+2022-11-12 21:42:14.5256 DEBUG Executed controller factory for controller FundooNoteApp.Controllers.UserController (FundooNoteApp)
+2022-11-12 21:42:14.5362 DEBUG Attempting to bind parameter 'userRegistrationModel' of type 'CommonLayer.Model.UserRegistrationModel' ...
+2022-11-12 21:42:14.5362 DEBUG Attempting to bind parameter 'userRegistrationModel' of type 'CommonLayer.Model.UserRegistrationModel' using the name '' in request data ...
+2022-11-12 21:42:14.5362 DEBUG Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2022-11-12 21:42:14.5567 DEBUG JSON input formatter succeeded, deserializing to type 'CommonLayer.Model.UserRegistrationModel'
+2022-11-12 21:42:14.5567 DEBUG Done attempting to bind parameter 'userRegistrationModel' of type 'CommonLayer.Model.UserRegistrationModel'.
+2022-11-12 21:42:14.5567 DEBUG Done attempting to bind parameter 'userRegistrationModel' of type 'CommonLayer.Model.UserRegistrationModel'.
+2022-11-12 21:42:14.5567 DEBUG Attempting to validate the bound parameter 'userRegistrationModel' of type 'CommonLayer.Model.UserRegistrationModel' ...
+2022-11-12 21:42:14.5624 DEBUG Done attempting to validate the bound parameter 'userRegistrationModel' of type 'CommonLayer.Model.UserRegistrationModel'.
+2022-11-12 21:42:14.5624 TRACE Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2022-11-12 21:42:14.5624 TRACE Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2022-11-12 21:42:14.5624 TRACE Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2022-11-12 21:42:14.5624 TRACE Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2022-11-12 21:42:14.5624 INFO Executing action method FundooNoteApp.Controllers.UserController.RegisterUser (FundooNoteApp) - Validation state: Valid
+2022-11-12 21:42:14.5624 TRACE Executing action method FundooNoteApp.Controllers.UserController.RegisterUser (FundooNoteApp) with arguments (CommonLayer.Model.UserRegistrationModel)
+2022-11-12 21:42:16.1914 INFO Entity Framework Core 3.1.0 initialized 'FundooContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-11-12 21:42:16.2617 DEBUG 'FundooContext' generated a temporary value for the 'UserId' property of new 'UserEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-11-12 21:42:16.3459 DEBUG Context 'FundooContext' started tracking 'UserEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-11-12 21:42:16.3459 DEBUG SaveChanges starting for 'FundooContext'.
+2022-11-12 21:42:16.3459 DEBUG DetectChanges starting for 'FundooContext'.
+2022-11-12 21:42:16.3719 DEBUG DetectChanges completed for 'FundooContext'.
+2022-11-12 21:42:17.0819 DEBUG Opening connection to database 'FundooDB' on server '(localdb)\MSSQLLocalDB'.
+2022-11-12 21:42:17.4606 DEBUG Opened connection to database 'FundooDB' on server '(localdb)\MSSQLLocalDB'.
+2022-11-12 21:42:17.4606 DEBUG Beginning transaction with isolation level 'Unspecified'.
+2022-11-12 21:42:17.4804 DEBUG Began transaction with isolation level 'ReadCommitted'.
+2022-11-12 21:42:17.5417 DEBUG Creating DbCommand for 'ExecuteReader'.
+2022-11-12 21:42:17.5527 DEBUG Created DbCommand for 'ExecuteReader' (5ms).
+2022-11-12 21:42:17.5848 DEBUG Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Usertable] ([Email], [FirstName], [LastName], [Password])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [UserId]
+FROM [Usertable]
+WHERE @@ROWCOUNT = 1 AND [UserId] = scope_identity();
+2022-11-12 21:42:17.6729 INFO Executed DbCommand (103ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Usertable] ([Email], [FirstName], [LastName], [Password])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [UserId]
+FROM [Usertable]
+WHERE @@ROWCOUNT = 1 AND [UserId] = scope_identity();
+2022-11-12 21:42:17.7008 DEBUG Foreign key property 'UserEntity.UserId' detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2022-11-12 21:42:17.7008 DEBUG A data reader was disposed.
+2022-11-12 21:42:17.7008 DEBUG Committing transaction.
+2022-11-12 21:42:17.7192 DEBUG Committing transaction.
+2022-11-12 21:42:17.7192 DEBUG Closing connection to database 'FundooDB' on server '(localdb)\MSSQLLocalDB'.
+2022-11-12 21:42:17.7192 DEBUG Closed connection to database 'FundooDB' on server '(localdb)\MSSQLLocalDB'.
+2022-11-12 21:42:17.7192 DEBUG Disposing transaction.
+2022-11-12 21:42:17.7362 DEBUG An 'UserEntity' entity tracked by 'FundooContext' changed from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-11-12 21:42:17.7362 DEBUG SaveChanges completed for 'FundooContext' with 1 entities written to the database.
+2022-11-12 21:42:17.7362 INFO User Registration Succesfull
+2022-11-12 21:42:17.7362 INFO Executed action method FundooNoteApp.Controllers.UserController.RegisterUser (FundooNoteApp), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3171.2624ms.
+2022-11-12 21:42:17.7362 TRACE Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2022-11-12 21:42:17.7362 TRACE Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2022-11-12 21:42:17.7362 TRACE Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2022-11-12 21:42:17.7362 TRACE Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2022-11-12 21:42:17.7362 TRACE Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2022-11-12 21:42:17.7362 TRACE Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2022-11-12 21:42:17.7362 TRACE Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2022-11-12 21:42:17.7362 DEBUG List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter
+2022-11-12 21:42:17.7362 DEBUG No information found on request to perform content negotiation.
+2022-11-12 21:42:17.7362 DEBUG Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2022-11-12 21:42:17.7362 DEBUG Attempting to select the first formatter in the output formatters list which can write the result.
+2022-11-12 21:42:17.7362 DEBUG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2022-11-12 21:42:17.7362 INFO Executing ObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[RepositoryLayer.Entity.UserEntity, RepositoryLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-12 21:42:17.7511 TRACE After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2022-11-12 21:42:17.7511 TRACE Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2022-11-12 21:42:17.7511 TRACE Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2022-11-12 21:42:17.7511 INFO Executed action FundooNoteApp.Controllers.UserController.RegisterUser (FundooNoteApp) in 4777.6305ms
+2022-11-12 21:42:17.7511 INFO Executed endpoint 'FundooNoteApp.Controllers.UserController.RegisterUser (FundooNoteApp)'
+2022-11-12 21:42:17.7511 DEBUG 'FundooContext' disposed.
+2022-11-12 21:42:17.7511 INFO Request finished in 4828.1238ms 200 application/json; charset=utf-8
