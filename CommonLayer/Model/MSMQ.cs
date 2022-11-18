@@ -33,7 +33,7 @@ namespace CommonLayer.Model
                 var msg = MessageQ.EndReceive(e.AsyncResult);
                 string token = msg.Body.ToString();
                 string subject = "Fundoo Notes App Reset Link";
-                string body = token;
+                string body = "http://localhost:4200/reset-password?"+token;
                 var SMTP = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,
